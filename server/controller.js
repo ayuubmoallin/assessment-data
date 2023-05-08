@@ -238,7 +238,7 @@ module.exports = {
         console.log("DB seeded!");
         res.sendStatus(200);
       })
-      .catch((err) => console.log("error seeding DB", err));
+      
   },
   
   getCountries: (req, res) => {
@@ -257,7 +257,6 @@ module.exports = {
       .then((countries) => {
         res.status(200).send(countries[0]);
       })
-      .catch((err) => console.log("error seeding DB", err));;
   },
 
   
@@ -273,7 +272,6 @@ module.exports = {
       .then((cities) => {
         res.status(200).send(cities[0]);
       })
-      .catch((err) => console.log("error seeding DB", err));;
   },
 
   
@@ -284,6 +282,5 @@ module.exports = {
       .then((deletedCity) => {
         res.status(200).send(deletedCity[0]);
       })
-      .catch((err) => console.log("error seeding DB", err));;
   },
 };

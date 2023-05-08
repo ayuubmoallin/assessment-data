@@ -3,8 +3,7 @@ const nameInput = document.querySelector('#name-input')
 const countrySelect = document.querySelector('#country-select')
 const countryList = document.querySelector('#country-list')
 
-function handleSubmit(e) {
-    e.preventDefault()
+function handleSubmit() {
 
     if (nameInput.value < 1) {
         alert ('You must enter a city name')
@@ -14,8 +13,8 @@ function handleSubmit(e) {
     let userRating = document.querySelector('input[name="rating"]:checked').value
     let body = {
         name: nameInput.value, 
-        rating: +userRating, 
-        countryId: +countrySelect.value
+        rating: Number(userRating), 
+        countryId: Number(countrySelect.value)
     }
 
     axios.post('http://localhost:4004/cities', body)
@@ -63,6 +62,6 @@ function getCountries() {
         })
 }
 
-getCountries()
-getCities()
-form.addEventListener('submit', handleSubmit)
+getCountries();
+getCities();
+form.addEventListener('submit', handleSubmit);
